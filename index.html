@@ -9,7 +9,7 @@
     <body>
         <main>
             <!-- section.welcome -->
-            <section class="welcome hidden">
+            <section class="welcome">
                 <h1>Välkommen</h1>
                 <h5>Ange namn:</h5>
                 <input type="text">
@@ -18,7 +18,7 @@
             <!-- /section.welcome -->
 
             <!-- section.game-area -->
-            <section class="game-area">
+            <section class="game-area hidden">
                 <div class="clock primary centered" id="timer">00:45</div>
                 <div class="lifeline centered">
                     50/50
@@ -57,11 +57,21 @@
             <!-- /section.game-area -->
 
             <!-- .answerCorrectModal -->
-
+            <section class="answerCorrectModal hidden">
+                <img src="./img/correct.png" alt="Grön bock som symboliserar att man haft rätt.">
+                <h2 id="printscore">1000 poäng</h2>
+                <button class="endGame"></button>
+                <button class="continue"></button>
+            </section>
             <!-- /.answerCorrectModal -->
 
             <!-- .answerIncorrectModal -->
-            
+            <section class="answerIncorrectModal hidden">
+                <img src="./img/errormark.png" alt="Grön bock som symboliserar att man haft rätt.">
+                <h2 id="printscore">0 poäng</h2>
+                <button class="home"></button>
+                <button class="restart"></button>
+            </section>
             <!-- /.answerIncorrectModal -->
         </main>
     </body>

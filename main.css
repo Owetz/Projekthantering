@@ -15,6 +15,7 @@ body {
 
 /* section.welcome */
 .welcome {
+    z-index: 1;
     text-align: center;
     position: absolute;
     height: 300px;
@@ -42,6 +43,9 @@ input[type="text"] {
     background-color: azure;
     border-radius: 20px;
     display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 input[type="button"] {
@@ -52,6 +56,8 @@ input[type="button"] {
     background: azure;
     display: block;
     margin: 0 auto;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 /* /section.welcome */
@@ -157,6 +163,102 @@ li.stage.current {
 }
 
 /* /section.game-area */
+
+
+/*  .answerCorrectModal */
+    .answerCorrectModal {
+        position: absolute;
+        background: white;
+        /* height: 50%; */
+        width: 50%;
+        top: 20%;
+        left: 25%;
+        border: 8px solid green;
+        text-align: center;
+    }
+
+    .answerCorrectModal img {
+        position: relative;
+        margin: 10% auto;
+    }
+
+    .answerCorrectModal h2 {
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+
+    .answerCorrectModal button {
+        width: 100px;
+        height: 50px;
+        margin: 0 10px 20px ;
+        color: green;
+        border: 5px solid green;
+        border-radius: 10px;
+        background: azure;
+        font-size: 20px;
+    }
+
+    .endGame {
+        background-image: url(./img/sedlar.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .continue {
+        background-image: url(./img/forwardarrow.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+/*  /.answerCorrectModal */
+
+/*  .answerIncorrectModal */
+    .answerIncorrectModal {
+        position: absolute;
+        background: white;
+        width: 50%;
+        top: 20%;
+        left: 25%;
+        border: 8px solid red;
+        text-align: center;
+    }
+
+    .answerIncorrectModal img {
+        position: relative;
+        margin: 10% auto;
+    }
+
+    .answerIncorrectModal h2 {
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+
+    .answerIncorrectModal button {
+        width: 100px;
+        height: 50px;
+        margin: 0 10px 20px ;
+        color: red;
+        border: 5px solid red;
+        border-radius: 10px;
+        background: azure;
+        font-size: 20px;
+    }
+
+    button.restart {
+        background-image: url('./img/redo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    button.home {
+        background-image: url('./img/home.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+/*  /.answerIncorrectModal */
 
 /* misc */
 .hidden {
