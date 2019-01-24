@@ -11,6 +11,7 @@ body {
     background-image: linear-gradient(330deg, #653E7E 32.4%, #E68F5B 96.52%);
     background-repeat: no-repeat;
     height: 100vh;
+    background-attachment: fixed;
 }
 
 /* section.welcome */
