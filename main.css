@@ -6,14 +6,8 @@
     -webkit-box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
 body {
-    /* gamla stilla bakgrunden
-    background-image: linear-gradient(330deg, #653E7E 32.4%, #E68F5B 96.52%);
-    background-repeat: no-repeat;
     height: 100vh;
-    background-attachment: fixed;
-    */
     background: linear-gradient(141deg, #e68f5b, #653e7e, #e68f5b);
     background-size: 250% 250%;
     animation: AnimationName 25s ease infinite;
@@ -22,7 +16,7 @@ body {
     0%{background-position:23% 0%}
     50%{background-position:78% 100%}
     100%{background-position:23% 0%}
-}
+} 
 
 
 /* section.welcome */
@@ -141,6 +135,7 @@ section.game-area {
     border: 1px solid #7ACBE6;
     font-size: 15px;
     text-align: center;
+    color: white;
 }
 
 .stages {
@@ -164,7 +159,7 @@ section.game-area {
 li.stage {
     border: 2px solid white;
     list-style: none;
-    height: 34px;
+    height: 33px;
     width: 80%;
     margin: 5px 0;
 }
@@ -200,25 +195,25 @@ li.stage.current {
     }
 
     .answerCorrectModal button {
-        width: 100px;
-        height: 50px;
+        width: 120px;
+        height: 80px;
         margin: 0 10px 20px ;
         color: green;
         border: 5px solid green;
         border-radius: 10px;
-        background: azure;
+        background-color: azure;
         font-size: 20px;
     }
 
     .endGame {
-        background-image: url(./img/sedlar.png);
+        background-image: url('./img/sedlar.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
     }
 
     .continue {
-        background-image: url(./img/forwardarrow.png);
+        background-image: url('./img/forwardarrow.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -247,13 +242,13 @@ li.stage.current {
     }
 
     .answerIncorrectModal button {
-        width: 100px;
-        height: 50px;
+        width: 120px;
+        height: 80px;
         margin: 0 10px 20px ;
         color: red;
         border: 5px solid red;
         border-radius: 10px;
-        background: azure;
+        background-color: azure;
         font-size: 20px;
     }
 
