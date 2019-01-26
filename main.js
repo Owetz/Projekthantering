@@ -599,6 +599,7 @@ function startGame() {
       console.log("Rätt Svar: " + correctAnswer);
       nextlevel(currentLevel);
       currentLevel = 1;
+      lifeLine = 1;
       nextlevel(currentLevel);
       return userName;
     } else { //Player is not ready, going back to welcome-screen.
