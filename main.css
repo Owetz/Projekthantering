@@ -108,6 +108,13 @@ section.game-area {
     font-size: 20px;
 }
 
+.answerButton:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 .clock {
     position: absolute;
     top: 15%;
@@ -129,6 +136,15 @@ section.game-area {
     font-size:20px;
     font-weight: bold;
 }
+
+
+
+.lifeline:hover {
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 
 .lifeline-bullet {
     position: absolute;
