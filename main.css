@@ -9,12 +9,6 @@
 }
 
 body {
-    /* gamla stilla bakgrunden
-    background-image: linear-gradient(330deg, #653E7E 32.4%, #E68F5B 96.52%);
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-attachment: fixed;
-    */
     height: 100vh;
     background: linear-gradient(141deg, #e68f5b, #653e7e, #e68f5b);
     background-size: 250% 250%;
@@ -164,6 +158,7 @@ section.game-area {
     border: 1px solid #7ACBE6;
     font-size: 15px;
     text-align: center;
+    color: white;
 }
 
 .stages {
@@ -197,6 +192,27 @@ li.stage.current {
     background: #7ACBE6;
 }
 
+.divider {
+    border-bottom: solid 1px black;
+    width: 45%;
+    margin-top: -45px;
+}
+
+.divider:before {
+    background-image: url(./img/50_plus_1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 56px;
+    height: 56px;
+    display: block;
+    content: '';
+    position: relative;
+    top: 28px;
+    right: 60px;
+}
+
+
 /* /section.game-area */
 
 
@@ -228,7 +244,7 @@ li.stage.current {
         color: green;
         border: 5px solid green;
         border-radius: 10px;
-        background: azure;
+        background-color: azure;
         font-size: 20px;
     }
 
@@ -275,7 +291,7 @@ li.stage.current {
         color: red;
         border: 5px solid red;
         border-radius: 10px;
-        background: azure;
+        background-color: azure;
         font-size: 20px;
     }
 
