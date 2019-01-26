@@ -574,12 +574,10 @@ const questions = [
 ];
 console.log(questions);
 
-let userIsPlaying = false;
-let userAnswer;
-let correctAnswer;
-let thinking = false;
-let moneyWon;
-let minimalWin;
+let userAnswer; //Users answer on the current question
+let correctAnswer; // Used to store the correct answer of the current question
+let moneyWon; //Store the current amount of prizemoney
+let minimalWin; //Variable to store security level.
 let currentLevel = 1; //Set the current level.
 console.log("currentLevel: " + currentLevel);
 let lifeLine = 1; //Set the default amount of lifelines.
@@ -592,36 +590,34 @@ setLifeLine.innerHTML = lifeLine; //Write the amount of lifelines to box.
 function startGame() {
   let userName = document.getElementById("userName").value; //Getting the input value.
   let userNameAnswer = confirm("Välkommen " + userName + "! Är du redo för första frågan?"); //user confirm start
-    if (userNameAnswer) { //If above is true:
+    if (userNameAnswer) { //If above is true, then go ahead to the game-area.
       console.log("Redo!");
       toggleHidden("welcome-box", "game-box"); //Hide welcomescreen, show game.
       createQuestion(currentLevel); //print the question and question to the game.
       console.log("Rätt Svar: " + correctAnswer);
-      nextlevel(currentLevel);
-      currentLevel = 1;
-      lifeLine = 1;
-      nextlevel(currentLevel);
+      nextlevel(currentLevel); //Removing .current from the sidebars li.
+      currentLevel = 1; //Setting the currentLevel to 1.
+      lifeLine = 1; //Setting lifeline to 1.
+      nextlevel(currentLevel); //Adding the .current to the li representing the current level.
       return userName;
-    } else { //Player is not ready, going back to welcome-screen.
-      console.log("Inte redo!");
     };
   }; // End of startGame();
 
 
-  function resetGame() {
+  function resetGame() { //Reset the game.
     console.log("resetGame()");
-    lifeLine = 1;
-    nextlevel(currentLevel);
-    currentLevel = 1;
-    nextlevel(currentLevel);
-    toggleWrong("wrongModal");
-    userNameAnswer = confirm("Är du redo för att svara på första frågan i en ny omgång?");
-    if (userNameAnswer) {
-      createQuestion(currentLevel);
+    lifeLine = 1; //Set the lifeline to default.
+    nextlevel(currentLevel); //Remove .current from the sidebars li.
+    currentLevel = 1; //Set current level to default.
+    nextlevel(currentLevel); //Add .current to correct sidebar li.
+    toggleWrong("wrongModal"); //Hide the modal #wrongModal.
+    userNameAnswer = confirm("Är du redo för att svara på första frågan i en ny omgång?"); //Check if user is ready.
+    if (userNameAnswer) { //If yes..
+      createQuestion(currentLevel); //Set up the questions from the current level (1);
       return currentLevel;
     } else {
       console.log("Reset-inte redo")
-      toggleHidden("welcome-box", "game-box");
+      toggleHidden("welcome-box", "game-box"); //Show #welcome-box, hide #game-box and wait for input.
     }
   };
 
