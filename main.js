@@ -583,7 +583,7 @@ console.log("currentLevel: " + currentLevel);
 let lifeLine = 1; //Set the default amount of lifelines.
 console.log("lifeLine: " + lifeLine);
 const setLifeLine = document.getElementById('remaining'); //Target the lifeline container
-setLifeLine.innerHTML = lifeLine; //Write the amount of lifelines to box.
+setLifeLine.textContent  = lifeLine; //Write the amount of lifelines to box.
 
 
 //Startgame
@@ -623,86 +623,86 @@ function startGame() {
 
   //Eventlisteners
   document.getElementById("a").addEventListener("click", function(){
-    userAnswer = document.getElementById("a").innerHTML;
+    userAnswer = document.getElementById("a").textContent ;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
-      let money = document.getElementById(currentLevel).innerHTML;
-      document.getElementById("printscore").innerHTML = "Grattis! Du har vunnit " + money + "kr!"
+      let money = document.getElementById(currentLevel).textContent ;
+      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
-        document.getElementById("printminscore").innerHTML = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
+        document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
       } else {
-        document.getElementById("printminscore").innerHTML = "Det där gick inte så bra, försök igen!";
+        document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
       }
     }
   });
 
   document.getElementById("b").addEventListener("click", function(){
-    userAnswer = document.getElementById("b").innerHTML;
+    userAnswer = document.getElementById("b").textContent ;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
-      let money = document.getElementById(currentLevel).innerHTML;
-      document.getElementById("printscore").innerHTML = "Grattis! Du har vunnit " + money + "kr!"
+      let money = document.getElementById(currentLevel).textContent ;
+      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
-        document.getElementById("printminscore").innerHTML = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
+        document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
       } else {
-        document.getElementById("printminscore").innerHTML = "Det där gick inte så bra, försök igen!";
+        document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
       }
     }
   });
 
   document.getElementById("c").addEventListener("click", function(){
-    userAnswer = document.getElementById("c").innerHTML;
+    userAnswer = document.getElementById("c").textContent ;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
-      let money = document.getElementById(currentLevel).innerHTML;
-      document.getElementById("printscore").innerHTML = "Grattis! Du har vunnit " + money + "kr!"
+      let money = document.getElementById(currentLevel).textContent ;
+      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
-        document.getElementById("printminscore").innerHTML = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
+        document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
       } else {
-        document.getElementById("printminscore").innerHTML = "Det där gick inte så bra, försök igen!";
+        document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
       }
     }
   });
 
   document.getElementById("d").addEventListener("click", function(){
-    userAnswer = document.getElementById("d").innerHTML;
+    userAnswer = document.getElementById("d").textContent ;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
-      let money = document.getElementById(currentLevel).innerHTML;
-      document.getElementById("printscore").innerHTML = "Grattis! Du har vunnit " + money + "kr!"
+      let money = document.getElementById(currentLevel).textContent ;
+      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
-        document.getElementById("printminscore").innerHTML = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
+        document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
       } else {
-        document.getElementById("printminscore").innerHTML = "Det där gick inte så bra, försök igen!";
+        document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
       }
     }
   });
 
   document.getElementById("money").addEventListener("click", function() {
-    moneyWon = document.getElementById(currentLevel).innerHTML;
+    moneyWon = document.getElementById(currentLevel).textContent ;
     toggleModal("correctModal");
     toggleHidden("welcome-box", "game-box");
-    document.getElementById("greeting").innerHTML = "I ditt tidigare spel vann du " + moneyWon + "Kr! Vill du spela igen?";
+    document.getElementById("greeting").textContent  = "I ditt tidigare spel vann du " + moneyWon + "Kr! Vill du spela igen?";
   });
 
   document.getElementById("nextLevel").addEventListener("click", function(){
@@ -715,7 +715,7 @@ function startGame() {
       console.log("Lifeline: " + lifeLine);
       lifeLine += 1;
       console.log("Lifeline: " + lifeLine);
-      setLifeLine.innerHTML = lifeLine;
+      setLifeLine.textContent  = lifeLine;
     }
     toggleModal("correctModal");
     createQuestion(currentLevel);
@@ -750,11 +750,11 @@ function createQuestion(lvl) {
   const elC = document.getElementById("c");
   const elD = document.getElementById("d");
   correctAnswer = questions[0][lvl][number].answer;
-  el.innerHTML = questions[0][lvl][number].question;//write question to game
-  elA.innerHTML = questions[0][lvl][number].A;
-  elB.innerHTML = questions[0][lvl][number].B;
-  elC.innerHTML = questions[0][lvl][number].C;
-  elD.innerHTML = questions[0][lvl][number].D;
+  el.textContent  = questions[0][lvl][number].question;//write question to game
+  elA.textContent  = questions[0][lvl][number].A;
+  elB.textContent  = questions[0][lvl][number].B;
+  elC.textContent  = questions[0][lvl][number].C;
+  elD.textContent  = questions[0][lvl][number].D;
 };
 
 function nextlevel(lvl){
