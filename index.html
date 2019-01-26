@@ -13,6 +13,7 @@
             <!-- section.welcome -->
             <section class="welcome" id="welcome-box">
                 <h1>Välkommen</h1>
+                <h2 id="greeting"></h2>
                 <h5>Ange namn:</h5>
                 <input type="text" id="userName" placeholder="Ditt namn tack..">
                 <input type="button" value="Spela" onclick="startGame()">
@@ -59,20 +60,20 @@
             <!-- /section.game-area -->
 
             <!-- .answerCorrectModal -->
-            <section class="answerCorrectModal hidden">
+            <section class="answerCorrectModal hidden" id="correctModal">
                 <img src="./img/correct.png" alt="Grön bock som symboliserar att man haft rätt.">
                 <h2 id="printscore">1000 poäng</h2>
-                <button class="endGame"></button>
-                <button class="continue" onclick="nextLevel()"></button>
+                <button class="endGame" id="money"></button>
+                <button class="continue" id="nextLevel"></button>
             </section>
             <!-- /.answerCorrectModal -->
 
             <!-- .answerIncorrectModal -->
-            <section class="answerIncorrectModal hidden" id="wrong-answer">
+            <section class="answerIncorrectModal hidden" id="wrongModal">
                 <img src="./img/errormark.png" alt="Grön bock som symboliserar att man haft rätt.">
-                <h2 id="printscore">0 poäng</h2>
-                <button class="home"></button>
-                <button class="restart"></button>
+                <h2 id="printminscore">0 poäng</h2>
+                <button class="home" id="home"></button>
+                <button class="restart" onclick="resetGame()"></button>
             </section>
             <!-- /.answerIncorrectModal -->
         </main>
