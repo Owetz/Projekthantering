@@ -597,6 +597,9 @@ function startGame() {
       toggleHidden("welcome-box", "game-box"); //Hide welcomescreen, show game.
       createQuestion(currentLevel); //print the question and question to the game.
       console.log("Rätt Svar: " + correctAnswer);
+      nextlevel(currentLevel);
+      currentLevel = 1;
+      nextlevel(currentLevel);
       return userName;
     } else { //Player is not ready, going back to welcome-screen.
       console.log("Inte redo!");
@@ -607,7 +610,9 @@ function startGame() {
   function resetGame() {
     console.log("resetGame()");
     lifeLine = 1;
+    nextlevel(currentLevel);
     currentLevel = 1;
+    nextlevel(currentLevel);
     toggleWrong("wrongModal");
     userNameAnswer = confirm("Är du redo för att svara på första frågan i en ny omgång?");
     if (userNameAnswer) {
