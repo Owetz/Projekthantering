@@ -610,7 +610,7 @@ function startGame() {
     nextlevel(currentLevel); //Remove .current from the sidebars li.
     currentLevel = 1; //Set current level to default.
     nextlevel(currentLevel); //Add .current to correct sidebar li.
-    toggleWrong("wrongModal"); //Hide the modal #wrongModal.
+    toggleModal("wrongModal"); //Hide the modal #wrongModal.
     userNameAnswer = confirm("Är du redo för att svara på första frågan i en ny omgång?"); //Check if user is ready.
     if (userNameAnswer) { //If yes..
       createQuestion(currentLevel); //Set up the questions from the current level (1);
@@ -751,20 +751,13 @@ function createQuestion(lvl) {
   const elD = document.getElementById("d");
   correctAnswer = questions[0][lvl][number].answer;
   el.textContent  = questions[0][lvl][number].question;//write question to game
-  elA.textContent  = questions[0][lvl][number].A;
-  elB.textContent  = questions[0][lvl][number].B;
-  elC.textContent  = questions[0][lvl][number].C;
-  elD.textContent  = questions[0][lvl][number].D;
+  elA.textContent  = "A: " + questions[0][lvl][number].A;
+  elB.textContent  = "B: " + questions[0][lvl][number].B;
+  elC.textContent  = "C: " + questions[0][lvl][number].C;
+  elD.textContent  = "D: " + questions[0][lvl][number].D;
 };
 
 function nextlevel(lvl){
   el = document.getElementById(lvl);
   el.classList.toggle("current");
 };
-
-/* console.log(questions);
-let lvl = 2;
-createQuestion(lvl);
-let random; //random nummer mellan 0-3
-console.log(questions[0][lvl][0].question); //Fråga 3 i nivå 1.
-console.log(questions[0][2][0].question); //Fråga 1 i nivå 2. */

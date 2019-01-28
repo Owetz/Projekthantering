@@ -20,7 +20,6 @@ body {
     100%{background-position:23% 0%}
 }
 
-
 /* section.welcome */
 .welcome {
     z-index: 1;
@@ -116,6 +115,11 @@ section.game-area {
     cursor: pointer;
 }
 
+.answerButton:active {
+    box-shadow: none;
+    transform: none;
+}
+
 .clock {
     position: absolute;
     top: 15%;
@@ -138,14 +142,11 @@ section.game-area {
     font-weight: bold;
 }
 
-
-
 .lifeline:hover {
     -ms-transform: scale(1.1);
     transform: scale(1.1);
     cursor: pointer;
 }
-
 
 .lifeline-bullet {
     position: absolute;
@@ -211,8 +212,6 @@ li.stage.current {
     top: 28px;
     right: 60px;
 }
-
-
 /* /section.game-area */
 
 
