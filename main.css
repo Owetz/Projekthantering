@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
     -webkit-box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
 body {
     height: 100vh;
     background: linear-gradient(141deg, #e68f5b, #653e7e, #e68f5b);
@@ -17,6 +19,7 @@ body {
     50%{background-position:78% 100%}
     100%{background-position:23% 0%}
 }
+
 
 /* section.welcome */
 .welcome {
@@ -106,6 +109,13 @@ section.game-area {
     font-size: 20px;
 }
 
+.answerButton:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 .clock {
     position: absolute;
     top: 15%;
@@ -127,6 +137,15 @@ section.game-area {
     font-size:20px;
     font-weight: bold;
 }
+
+
+
+.lifeline:hover {
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 
 .lifeline-bullet {
     position: absolute;
@@ -163,7 +182,7 @@ section.game-area {
 li.stage {
     border: 2px solid white;
     list-style: none;
-    height: 33px;
+    height: 34px;
     width: 80%;
     margin: 5px 0;
 }
@@ -173,6 +192,27 @@ li.stage.current {
     background: #7ACBE6;
 }
 
+.divider {
+    border-bottom: solid 1px black;
+    width: 45%;
+    margin-top: -45px;
+}
+
+.divider:before {
+    background-image: url(./img/50_plus_1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 56px;
+    height: 56px;
+    display: block;
+    content: '';
+    position: relative;
+    top: 28px;
+    right: 60px;
+}
+
+
 /* /section.game-area */
 
 
@@ -180,7 +220,6 @@ li.stage.current {
     .answerCorrectModal {
         position: absolute;
         background: white;
-        /* height: 50%; */
         width: 50%;
         top: 20%;
         left: 25%;
@@ -200,7 +239,7 @@ li.stage.current {
     }
 
     .answerCorrectModal button {
-        width: 120px;
+        width: 100px;
         height: 80px;
         margin: 0 10px 20px ;
         color: green;
@@ -211,14 +250,14 @@ li.stage.current {
     }
 
     .endGame {
-        background-image: url('./img/sedlar.png');
+        background-image: url(./img/sedlar.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
     }
 
     .continue {
-        background-image: url('./img/forwardarrow.png');
+        background-image: url(./img/forwardarrow.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -248,7 +287,7 @@ li.stage.current {
     }
 
     .answerIncorrectModal button {
-        width: 120px;
+        width: 100px;
         height: 80px;
         margin: 0 10px 20px ;
         color: red;
