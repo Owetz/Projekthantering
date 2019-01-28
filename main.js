@@ -688,6 +688,9 @@ function startGame() {
       console.log("Correct!");
       let money = document.getElementById(currentLevel).textContent ;
       document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
+      if (currentLevel == 15) {
+        document.getElementById("nextLevel").disabled = true;
+      }
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
@@ -717,7 +720,7 @@ function startGame() {
     currentLevel += 1;
     nextlevel(currentLevel);
     console.log("Current level " + currentLevel);
-    if (currentLevel == 5 || currentLevel == 10) {
+    if (currentLevel == 6 || currentLevel == 11) {
       console.log("Lifeline: " + lifeLine);
       lifeLine += 1;
       console.log("Lifeline: " + lifeLine);
@@ -730,6 +733,11 @@ function startGame() {
   document.getElementById("home").addEventListener("click", function(){
     toggleModal("wrongModal");
     toggleHidden("welcome-box", "game-box");
+    if (currentLevel < 6) {
+      document.getElementById("greeting").textContent = "Det där gick ju inte så bra. Du vann tyvärr ingenting.";
+    } else if (currentLevel >= 6 && currentLevel < 11) {
+      document.getElementById("greeting").textContent = "Ledsen att du inte kom längre, men du vann iallafall 10 000kr!"
+    } else if (currentLevel <)
   });
 
 
