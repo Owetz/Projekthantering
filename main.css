@@ -260,6 +260,10 @@ li.stage.current {
         cursor: pointer;
     }
 
+    .answerCorrectModal button:hover {
+        cursor: pointer;
+    }
+
     .endGame {
         background-image: url(./img/sedlar.png);
         background-size: contain;
