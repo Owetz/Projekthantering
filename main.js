@@ -584,7 +584,10 @@ let lifeLine = 1; //Set the default amount of lifelines.
 console.log("lifeLine: " + lifeLine);
 const setLifeLine = document.getElementById('remaining'); //Target the lifeline container
 setLifeLine.textContent  = lifeLine; //Write the amount of lifelines to box.
-
+function nextlevel(lvl){
+  el = document.getElementById(lvl);
+  el.classList.toggle("current");
+};
 
 //Startgame
 function startGame() {
@@ -702,7 +705,10 @@ function startGame() {
     moneyWon = document.getElementById(currentLevel).textContent ;
     toggleModal("correctModal");
     toggleHidden("welcome-box", "game-box");
-    document.getElementById("greeting").textContent  = "I ditt tidigare spel vann du " + moneyWon + "Kr! Vill du spela igen?";
+    document.getElementById("greeting").textContent  = "Grattis! Du vann " + moneyWon + " kronor i omgången! Vill du spela igen?";
+    if (currentLevel == 15) {
+      document.getElementById("greeting").textContent = "DU VANN STORVINSTEN på en miljon svenska riksdaler!"
+    }
   });
 
   document.getElementById("nextLevel").addEventListener("click", function(){
@@ -718,8 +724,7 @@ function startGame() {
       setLifeLine.textContent  = lifeLine;
     }
     toggleModal("correctModal");
-    createQuestion(currentLevel);
-
+    createQuestion(currentLevel); 
   });
 
   document.getElementById("home").addEventListener("click", function(){
@@ -750,14 +755,10 @@ function createQuestion(lvl) {
   const elC = document.getElementById("c");
   const elD = document.getElementById("d");
   correctAnswer = questions[0][lvl][number].answer;
+  console.log("Rätt svar: " + correctAnswer);
   el.textContent  = questions[0][lvl][number].question;//write question to game
-  elA.textContent  = "A: " + questions[0][lvl][number].A;
-  elB.textContent  = "B: " + questions[0][lvl][number].B;
-  elC.textContent  = "C: " + questions[0][lvl][number].C;
-  elD.textContent  = "D: " + questions[0][lvl][number].D;
-};
-
-function nextlevel(lvl){
-  el = document.getElementById(lvl);
-  el.classList.toggle("current");
+  elA.textContent  = questions[0][lvl][number].A;
+  elB.textContent  = questions[0][lvl][number].B;
+  elC.textContent  = questions[0][lvl][number].C;
+  elD.textContent  = questions[0][lvl][number].D;
 };
