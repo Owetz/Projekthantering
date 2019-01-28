@@ -650,6 +650,7 @@ function startGame() {
     console.log("Ran nextlevel() again.")
     toggleModal("wrongModal"); //Hide the modal #wrongModal.
     console.log("toggleModal('wrongModal')");
+
     userNameAnswer = confirm("Är du redo för att svara på första frågan i en ny omgång?"); //Check if user is ready.
     if (userNameAnswer) { //If yes..
       createQuestion(currentLevel); //Set up the questions from the current level (1);
@@ -662,6 +663,14 @@ function startGame() {
   };
 
   //Eventlisteners
+  document.getElementById("lifeline-button").addEventListener("click", function() {
+    lifeLine -= 1;
+    document.getElementById("remaining").textContent = lifeLine;
+    if(lifeLine <= 0) {
+      document.getElementById("lifeline-button").disabled = true;
+    }
+  });
+
   document.getElementById("a").addEventListener("click", function(){
     clearInterval(updateTimer);
     userAnswer = document.getElementById("a").textContent ;
