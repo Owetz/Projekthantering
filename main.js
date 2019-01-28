@@ -635,7 +635,7 @@ function startGame() {
       nextlevel(currentLevel); //Adding the .current to the li representing the current level.
       return userName;
     };
-  }; // End of startGame();
+}; // End of startGame();
 
 
   function resetGame() { //Reset the game.
@@ -665,14 +665,57 @@ function startGame() {
   };
 
   //Eventlisteners
+
+  /* LIFELINE */
   document.getElementById("lifeline-button").addEventListener("click", function() {
     lifeLine -= 1;
     document.getElementById("remaining").textContent = lifeLine;
     if(lifeLine <= 0) {
       document.getElementById("lifeline-button").disabled = true;
     }
+
+    function removeAnswers(){
+      var optionOne = Math.floor(Math.random() * Math.floor(2));
+      var optionTwo = Math.floor(Math.random() * Math.floor(2));
+      let answer = correctAnswer;
+      var answers = [document.getElementById("a").textContent, document.getElementById("b").textContent,document.getElementById("c").textContent,document.getElementById("d").textContent];
+      var letters = ["a", "b", "c", "d"];
+      console.log("Answers.length: " + answers.length);
+      console.log(letters);
+
+      for (i = 0; i < answers.length; i++) {
+        n = i;
+        console.log(answers[n]);
+        if(answers[n] == answer) {
+          console.log("Removed: " + letters[i]);
+          letters.splice(i,1);
+          console.log("letters after delete: " + letters);
+        }
+      };
+      console.log("Letters after for-loop: " + letters);
+      console.log("value of optionOne: " + optionOne);
+      console.log("value of optionTwo: " + optionTwo);
+
+      while (optionOne == optionTwo) {
+        optionOne = Math.floor(Math.random() * Math.floor(2));
+        optionTwo = Math.floor(Math.random() * Math.floor(2));
+      };
+      console.log("value of optionOne after while(): " + optionOne);
+      console.log("value of optionTwo after while(): " + optionTwo);
+
+      console.log(letters[optionOne]);
+      console.log(letters[optionTwo]);
+
+      document.getElementById(letters[optionOne]).innerHTML = "";
+      document.getElementById(letters[optionOne]).disabled = true;
+      document.getElementById(letters[optionTwo]).innerHTML = "";
+      document.getElementById(letters[optionTwo]).disabled = true;
+    };
+
+    removeAnswers();
   });
 
+  /* OPTION A */
   document.getElementById("a").addEventListener("click", function(){
     clearInterval(updateTimer);
     userAnswer = document.getElementById("a").textContent;
