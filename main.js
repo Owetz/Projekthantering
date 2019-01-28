@@ -579,6 +579,9 @@ let correctAnswer; // Used to store the correct answer of the current question
 let moneyWon; //Store the current amount of prizemoney
 let minimalWin; //Variable to store security level.
 let currentLevel = 1; //Set the current level.
+let timeLeft = 45;
+let time = document.getElementById("timer");
+let updateTimer;
 console.log("currentLevel: " + currentLevel);
 let lifeLine = 1; //Set the default amount of lifelines.
 console.log("lifeLine: " + lifeLine);
@@ -589,11 +592,39 @@ function nextlevel(lvl){
   el.classList.toggle("current");
 };
 
+function startTimer() {
+  updateTimer = setInterval(insertTime, 1000);
+};
+
+function resetTimer() {
+ console.log("Resetting the timer.");
+ return timeLeft;
+};
+
+function insertTime() {
+  if(timeLeft < 10) {
+    console.log(timeLeft);
+    const n = "0";
+    time.textContent = n + timeLeft;
+  } else {
+    time.textContent = timeLeft;
+  };
+
+  if(timeLeft <= 0) {
+    clearInterval(updateTimer);
+    toggleModal("wrongModal");
+    document.getElementById("printminscore").textContent = "Tiden tog tyvärr slut!";
+  } else {
+    timeLeft -= 1;
+  }
+};
+
 //Startgame
 function startGame() {
   let userName = document.getElementById("userName").value; //Getting the input value.
   let userNameAnswer = confirm("Välkommen " + userName + "! Är du redo för första frågan?"); //user confirm start
     if (userNameAnswer) { //If above is true, then go ahead to the game-area.
+      timeLeft = 45;
       console.log("Redo!");
       toggleHidden("welcome-box", "game-box"); //Hide welcomescreen, show game.
       createQuestion(currentLevel); //print the question and question to the game.
@@ -608,12 +639,17 @@ function startGame() {
 
 
   function resetGame() { //Reset the game.
+    timeLeft;
     console.log("resetGame()");
     lifeLine = 1; //Set the lifeline to default.
+    console.log("Life line = 0");
     nextlevel(currentLevel); //Remove .current from the sidebars li.
+    console.log("Ran nextlevel()");
     currentLevel = 1; //Set current level to default.
     nextlevel(currentLevel); //Add .current to correct sidebar li.
+    console.log("Ran nextlevel() again.")
     toggleModal("wrongModal"); //Hide the modal #wrongModal.
+    console.log("toggleModal('wrongModal')");
     userNameAnswer = confirm("Är du redo för att svara på första frågan i en ny omgång?"); //Check if user is ready.
     if (userNameAnswer) { //If yes..
       createQuestion(currentLevel); //Set up the questions from the current level (1);
@@ -622,10 +658,12 @@ function startGame() {
       console.log("Reset-inte redo")
       toggleHidden("welcome-box", "game-box"); //Show #welcome-box, hide #game-box and wait for input.
     }
+    console.log("End of resetGame()");
   };
 
   //Eventlisteners
   document.getElementById("a").addEventListener("click", function(){
+    clearInterval(updateTimer);
     userAnswer = document.getElementById("a").textContent ;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
@@ -645,6 +683,7 @@ function startGame() {
   });
 
   document.getElementById("b").addEventListener("click", function(){
+    clearInterval(updateTimer);
     userAnswer = document.getElementById("b").textContent ;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
@@ -664,6 +703,7 @@ function startGame() {
   });
 
   document.getElementById("c").addEventListener("click", function(){
+    clearInterval(updateTimer);
     userAnswer = document.getElementById("c").textContent ;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
@@ -683,6 +723,7 @@ function startGame() {
   });
 
   document.getElementById("d").addEventListener("click", function(){
+    clearInterval(updateTimer);
     userAnswer = document.getElementById("d").textContent ;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
@@ -727,7 +768,7 @@ function startGame() {
       setLifeLine.textContent  = lifeLine;
     }
     toggleModal("correctModal");
-    createQuestion(currentLevel); 
+    createQuestion(currentLevel);
   });
 
   document.getElementById("home").addEventListener("click", function(){
@@ -763,10 +804,11 @@ function createQuestion(lvl) {
   const elC = document.getElementById("c");
   const elD = document.getElementById("d");
   correctAnswer = questions[0][lvl][number].answer;
-  console.log("Rätt svar: " + correctAnswer);
   el.textContent  = questions[0][lvl][number].question;//write question to game
   elA.textContent  = questions[0][lvl][number].A;
   elB.textContent  = questions[0][lvl][number].B;
   elC.textContent  = questions[0][lvl][number].C;
   elD.textContent  = questions[0][lvl][number].D;
+  timeLeft = 45;
+  startTimer();
 };
