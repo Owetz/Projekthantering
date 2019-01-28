@@ -737,7 +737,7 @@ function startGame() {
       document.getElementById("greeting").textContent = "Det där gick ju inte så bra. Du vann tyvärr ingenting.";
     } else if (currentLevel >= 6 && currentLevel < 11) {
       document.getElementById("greeting").textContent = "Ledsen att du inte kom längre, men du vann iallafall 10 000kr!"
-    } else if (currentLevel <)
+    }
   });
 
 
