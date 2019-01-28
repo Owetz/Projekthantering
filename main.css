@@ -72,6 +72,10 @@ input[type="button"] {
     font-size: 20px;
 }
 
+input[type="button"]:hover {
+    cursor: pointer;
+}
+
 /* /section.welcome */
 
 /* section.game-area */
@@ -249,6 +253,10 @@ li.stage.current {
         font-size: 20px;
     }
 
+    .answerCorrectModal button:hover {
+        cursor: pointer;
+    }
+
     .endGame {
         background-image: url(./img/sedlar.png);
         background-size: contain;
@@ -295,6 +303,10 @@ li.stage.current {
         border-radius: 10px;
         background-color: azure;
         font-size: 20px;
+    }
+
+    .answerIncorrectModal button:hover {
+        cursor: pointer;
     }
 
     button.restart {
