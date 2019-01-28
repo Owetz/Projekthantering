@@ -839,6 +839,13 @@ function startGame() {
     }
   });
 
+  document.getElementById("userName").addEventListener("keydown", function(e) {
+    if (e.keyCode === 13) {
+      console.log("Enter klickades");
+      document.getElementById("startgame").click();
+    }
+  })
+
 
 /* Funktioner */
 function toggleHidden(id, id2) {
