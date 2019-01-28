@@ -868,5 +868,9 @@ function createQuestion(lvl) {
   elB.textContent  = questions[0][lvl][number].B;
   elC.textContent  = questions[0][lvl][number].C;
   elD.textContent  = questions[0][lvl][number].D;
+  elA.disabled = false;
+  elB.disabled = false;
+  elC.disabled = false;
+  elD.disabled = false;
   startTimer();
 };
