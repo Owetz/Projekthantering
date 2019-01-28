@@ -22,19 +22,19 @@
 
             <!-- section.game-area -->
             <section class="game-area hidden" id="game-box">
-                <div class="clock primary centered" id="timer">45</div>
-                <div class="lifeline centered">
+                <div class="clock primary centered box-shadow" id="timer">45</div>
+                <div class="lifeline centered box-shadow">
                     50/50
                     <div class="lifeline-bullet" id="remaining">1</div>
                 </div>
                 <div class="playbox">
-                    <div class="questionbox primary centered" id="question">Question goes here</div>
-                    <div class="answerButton primary centered" id="a">Svar A</div>
-                    <div class="answerButton primary centered" id="b">Svar B</div>
-                    <div class="answerButton primary centered" id="c">Svar C</div>
-                    <div class="answerButton primary centered" id="d">Svar D</div>
+                    <div class="questionbox primary centered box-shadow" id="question">Question goes here</div>
+                    <div class="answerButton primary centered box-shadow" id="a">Svar A</div>
+                    <div class="answerButton primary centered box-shadow" id="b">Svar B</div>
+                    <div class="answerButton primary centered box-shadow" id="c">Svar C</div>
+                    <div class="answerButton primary centered box-shadow" id="d">Svar D</div>
                 </div>
-                <div class="stages primary">
+                <div class="stages primary box-shadow">
                     <ul>
                         <li class="stage centered" id="15">1 000 000</li>
                         <li class="stage centered" id="14">500 000</li>
@@ -63,8 +63,8 @@
             <section class="answerCorrectModal hidden" id="correctModal">
                 <img src="./img/correct.png" alt="Grön bock som symboliserar att man haft rätt.">
                 <h2 id="printscore">1000 poäng</h2>
-                <button class="endGame" id="money"></button>
-                <button class="continue" id="nextLevel"></button>
+                <button class="endGame box-shadow" id="money"></button>
+                <button class="continue box-shadow" id="nextLevel"></button>
             </section>
             <!-- /.answerCorrectModal -->
 
@@ -72,8 +72,8 @@
             <section class="answerIncorrectModal hidden" id="wrongModal">
                 <img src="./img/errormark.png" alt="Grön bock som symboliserar att man haft rätt.">
                 <h2 id="printminscore">0 poäng</h2>
-                <button class="home" id="home"></button>
-                <button class="restart" onclick="resetGame()"></button>
+                <button class="home box-shadow" id="home"></button>
+                <button class="restart box-shadow" onclick="resetGame()"></button>
             </section>
             <!-- /.answerIncorrectModal -->
         </main>

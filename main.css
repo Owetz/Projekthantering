@@ -186,6 +186,7 @@ li.stage.current {
         left: 25%;
         border: 8px solid green;
         text-align: center;
+        box-shadow: 5px 10px 10px black;
     }
 
     .answerCorrectModal img {
@@ -233,6 +234,7 @@ li.stage.current {
         left: 25%;
         border: 8px solid red;
         text-align: center;
+        box-shadow: 5px 10px 10px black;
     }
 
     .answerIncorrectModal img {
@@ -303,3 +305,7 @@ li.stage.current {
 }
 
 /* /misc */
+
+.box-shadow {
+    box-shadow: 0 4px 4px black;
+}
