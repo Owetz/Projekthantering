@@ -597,8 +597,8 @@ function startTimer() {
 };
 
 function resetTimer() {
- console.log("Resetting the timer.");
- return timeLeft;
+  timeLeft = 45;
+  time.textContent = timeLeft;
 };
 
 function insertTime() {
@@ -624,7 +624,7 @@ function startGame() {
   let userName = document.getElementById("userName").value; //Getting the input value.
   let userNameAnswer = confirm("Välkommen " + userName + "! Är du redo för första frågan?"); //user confirm start
     if (userNameAnswer) { //If above is true, then go ahead to the game-area.
-      timeLeft = 45;
+      resetTimer();
       console.log("Redo!");
       toggleHidden("welcome-box", "game-box"); //Hide welcomescreen, show game.
       createQuestion(currentLevel); //print the question and question to the game.
@@ -639,7 +639,7 @@ function startGame() {
 
 
   function resetGame() { //Reset the game.
-    timeLeft;
+    resetTimer();
     console.log("resetGame()");
     lifeLine = 1; //Set the lifeline to default.
     console.log("Life line = 0");
@@ -669,9 +669,11 @@ function startGame() {
       console.log("Correct!");
       let money = document.getElementById(currentLevel).textContent ;
       document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
+      document.getElementById("game-box").disabled = true;
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
+      document.getElementById("game-box").disabled = true;
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
@@ -689,9 +691,11 @@ function startGame() {
       console.log("Correct!");
       let money = document.getElementById(currentLevel).textContent ;
       document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
+      document.getElementById("game-box").disabled = true;
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
+      document.getElementById("game-box").disabled = true;
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
@@ -709,9 +713,11 @@ function startGame() {
       console.log("Correct!");
       let money = document.getElementById(currentLevel).textContent ;
       document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
+      document.getElementById("game-box").disabled = true;
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
+      document.getElementById("game-box").disabled = true;
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
@@ -728,6 +734,8 @@ function startGame() {
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
       let money = document.getElementById(currentLevel).textContent ;
+      toggleModal("correctModal");
+      document.getElementById("game-box").disabled = true;
       document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
       if (currentLevel == 15) {
         document.getElementById("nextLevel").disabled = true;
@@ -735,6 +743,7 @@ function startGame() {
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
+      document.getElementById("game-box").disabled = true;
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
@@ -768,6 +777,7 @@ function startGame() {
       setLifeLine.textContent  = lifeLine;
     }
     toggleModal("correctModal");
+    resetTimer();
     createQuestion(currentLevel);
   });
 
@@ -796,6 +806,7 @@ function toggleModal(id) {
 };
 
 function createQuestion(lvl) {
+  resetTimer();
   console.log("Running createQuestion()");
   let number = Math.floor(Math.random() * Math.floor(3));//Generate random number 0-3
   const el = document.getElementById("question");//Get element to write to.
@@ -809,6 +820,5 @@ function createQuestion(lvl) {
   elB.textContent  = questions[0][lvl][number].B;
   elC.textContent  = questions[0][lvl][number].C;
   elD.textContent  = questions[0][lvl][number].D;
-  timeLeft = 45;
   startTimer();
 };
