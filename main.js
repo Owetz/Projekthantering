@@ -642,7 +642,9 @@ function startGame() {
     resetTimer();
     console.log("resetGame()");
     lifeLine = 1; //Set the lifeline to default.
-    console.log("Life line = 0");
+    document.getElementById("remaining").textContent = lifeLine;
+    document.getElementById("lifeline-button").disabled = false;
+    console.log("Life line = 1");
     nextlevel(currentLevel); //Remove .current from the sidebars li.
     console.log("Ran nextlevel()");
     currentLevel = 1; //Set current level to default.
@@ -673,16 +675,14 @@ function startGame() {
 
   document.getElementById("a").addEventListener("click", function(){
     clearInterval(updateTimer);
-    userAnswer = document.getElementById("a").textContent ;
+    userAnswer = document.getElementById("a").textContent;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
       let money = document.getElementById(currentLevel).textContent ;
       document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
-      document.getElementById("game-box").disabled = true;
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
-      document.getElementById("game-box").disabled = true;
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
@@ -695,16 +695,14 @@ function startGame() {
 
   document.getElementById("b").addEventListener("click", function(){
     clearInterval(updateTimer);
-    userAnswer = document.getElementById("b").textContent ;
+    userAnswer = document.getElementById("b").textContent;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
       let money = document.getElementById(currentLevel).textContent ;
       document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
-      document.getElementById("game-box").disabled = true;
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
-      document.getElementById("game-box").disabled = true;
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
@@ -717,16 +715,14 @@ function startGame() {
 
   document.getElementById("c").addEventListener("click", function(){
     clearInterval(updateTimer);
-    userAnswer = document.getElementById("c").textContent ;
+    userAnswer = document.getElementById("c").textContent;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
       let money = document.getElementById(currentLevel).textContent ;
       document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
-      document.getElementById("game-box").disabled = true;
       toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
-      document.getElementById("game-box").disabled = true;
       toggleModal("wrongModal");
       if(minimalWin) {
         console.log(minimalWin);
@@ -739,17 +735,16 @@ function startGame() {
 
   document.getElementById("d").addEventListener("click", function(){
     clearInterval(updateTimer);
-    userAnswer = document.getElementById("d").textContent ;
+    userAnswer = document.getElementById("d").textContent;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
       let money = document.getElementById(currentLevel).textContent ;
       toggleModal("correctModal");
-      document.getElementById("game-box").disabled = true;
-      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
+      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!";
       if (currentLevel == 15) {
         document.getElementById("nextLevel").disabled = true;
+        toggleModal("correctModal");
       }
-      toggleModal("correctModal");
     } else {
       console.log("You were wrong!");
       document.getElementById("game-box").disabled = true;
@@ -783,6 +778,7 @@ function startGame() {
       console.log("Lifeline: " + lifeLine);
       lifeLine += 1;
       console.log("Lifeline: " + lifeLine);
+      document.getElementById("lifeline-button").disabled = false;
       setLifeLine.textContent  = lifeLine;
     }
     toggleModal("correctModal");
