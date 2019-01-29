@@ -715,9 +715,18 @@ function startGame() {
     removeAnswers();
   });
 
+  function disableAnswerButtons() {
+    document.getElementById("a").disabled = true;
+    document.getElementById("b").disabled = true;
+    document.getElementById("c").disabled = true;
+    document.getElementById("d").disabled = true;
+  };
+
+
   /* OPTION A */
   document.getElementById("a").addEventListener("click", function(){
     clearInterval(updateTimer);
+    disableAnswerButtons();
     userAnswer = document.getElementById("a").textContent;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
@@ -738,6 +747,7 @@ function startGame() {
 
   document.getElementById("b").addEventListener("click", function(){
     clearInterval(updateTimer);
+    disableAnswerButtons();
     userAnswer = document.getElementById("b").textContent;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
@@ -758,6 +768,7 @@ function startGame() {
 
   document.getElementById("c").addEventListener("click", function(){
     clearInterval(updateTimer);
+    disableAnswerButtons();
     userAnswer = document.getElementById("c").textContent;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
@@ -778,6 +789,7 @@ function startGame() {
 
   document.getElementById("d").addEventListener("click", function(){
     clearInterval(updateTimer);
+    disableAnswerButtons();
     userAnswer = document.getElementById("d").textContent;
     if (userAnswer == correctAnswer) {
       console.log("Correct!");
