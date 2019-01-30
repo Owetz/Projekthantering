@@ -24,7 +24,7 @@ Retrospektive meeting.
 
 ## To improve: 
 1. Mål
-⋅⋅* Identifera sprintens olika uppgifter.
+--* Identifera sprintens olika uppgifter.
 ⋅⋅* En tydlig backlog.
 ⋅⋅* Tydligare dagsmål.
 ⋅⋅* Dagsmöten via "konferenssamtal".
