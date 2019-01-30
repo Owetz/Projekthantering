@@ -1,11 +1,7 @@
 # Projekthantering
 Vem vill bli miljonär-spel
 
-<!-- 
-**********************
-Retrospektive meeting. 
-**********************
--->
+# Retrospektive Meeting:
 
 ## To keep:
 1. Inställning:
