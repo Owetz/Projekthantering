@@ -1,6 +1,12 @@
 # Projekthantering
 Vem vill bli miljonär-spel
 
+<!-- 
+**********************
+Retrospektive meeting. 
+**********************
+-->
+
 ##To keep:
 1. Inställning:
     Håller man sprinten enkel så är det lättare att ha en positiv inställning till projektet i helhet.
@@ -34,3 +40,12 @@ Vem vill bli miljonär-spel
 ⋅⋅* Inte arbeta helger.
 2. Bekvämlighet
 ⋅⋅* Inte förlita sig på att en uppgift löser sig "av sig själv".
+
+
+<!-- 
+**********************
+CHANGELOG
+**********************
+ -->
+
+ 
