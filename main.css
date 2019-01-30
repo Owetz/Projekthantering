@@ -35,7 +35,7 @@ body {
 
 .welcome h1 {
     position: relative;
-    margin: 160px auto 20px;
+    margin: 110px auto 20px;
     font-size: 40px;
     color: white;
     background-color: #505050b3;
@@ -43,6 +43,16 @@ body {
     width: 390px;
     padding: 5px 0;
     
+}
+
+.gamehost {
+    width: 367px;
+    margin: 0;
+    position: absolute;
+    left: 104px;
+    top: 65px;
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .welcome h2 {
@@ -63,7 +73,7 @@ input:focus {
 input[type="text"] {
     width: 200px;
     height: 40px;
-    margin: 0 auto 20px;
+    margin: 127px auto 20px;
     border: 1px solid black;
     background-color: azure;
     border-radius: 20px;
