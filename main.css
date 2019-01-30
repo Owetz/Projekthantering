@@ -35,6 +35,9 @@ body {
     width: 40%;
     top: 30%;
     left: 30%;
+    background-image: url(./img/Group.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .welcome h1 {
