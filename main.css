@@ -27,7 +27,7 @@ body {
     position: absolute;
     height: 500px;
     width: 40%;
-    top: 30%;
+    top: 15%;
     left: 30%;
     background-image: url(./img/Group.svg);
     background-size: 100% 100%;
@@ -49,8 +49,8 @@ body {
     width: 367px;
     margin: 0;
     position: absolute;
-    left: 104px;
-    top: 65px;
+    left: 73px;
+    top: 67px;
     border-radius: 50%;
     z-index: -1;
 }
