@@ -51,3 +51,8 @@ FUTURE IMPROVEMENTS
  -->
 
  1. 
+
+ Startbild: game_host_36.gif
+ Förlustbild: game_host_36.gif
+
+ Högstaprisetvinst: game_host_30.gif
