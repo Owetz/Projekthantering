@@ -619,6 +619,32 @@ function insertTime() {
   }
 };
 
+function evaluateAnswer() {
+  if (userAnswer == correctAnswer) {
+    console.log("Correct!");
+    let money = document.getElementById(currentLevel).textContent ;
+    toggleModal("correctModal");
+    document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!";
+    if (currentLevel == 15) {
+      console.log("Level: 15");
+      document.getElementById("game-host-correct").src = "./img/gif/game_host_30.gif";
+      document.getElementById("nextLevel").disabled = true;
+    } else {
+      document.getElementById("game-host-correct").src = "./img/gif/game_host_15.gif";
+    };
+  } else {
+    console.log("You were wrong!");
+    document.getElementById("game-box").disabled = true;
+    toggleModal("wrongModal");
+    if(minimalWin) {
+      console.log(minimalWin);
+      document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
+    } else {
+      document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
+    };
+  }
+}
+
 //Startgame
 function startGame() {
   let userName = document.getElementById("userName").value; //Getting the input value.
@@ -728,98 +754,37 @@ function startGame() {
     clearInterval(updateTimer);
     disableAnswerButtons();
     userAnswer = document.getElementById("a").textContent;
-    if (userAnswer == correctAnswer) {
-      console.log("Correct!");
-      let money = document.getElementById(currentLevel).textContent ;
-      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
-      toggleModal("correctModal");
-    } else {
-      console.log("You were wrong!");
-      toggleModal("wrongModal");
-      if(minimalWin) {
-        console.log(minimalWin);
-        document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
-      } else {
-        document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
-      }
-    }
+    evaluateAnswer();
   });
 
   document.getElementById("b").addEventListener("click", function(){
     clearInterval(updateTimer);
     disableAnswerButtons();
     userAnswer = document.getElementById("b").textContent;
-    if (userAnswer == correctAnswer) {
-      console.log("Correct!");
-      let money = document.getElementById(currentLevel).textContent ;
-      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
-      toggleModal("correctModal");
-    } else {
-      console.log("You were wrong!");
-      toggleModal("wrongModal");
-      if(minimalWin) {
-        console.log(minimalWin);
-        document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
-      } else {
-        document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
-      }
-    }
+    evaluateAnswer();
   });
 
   document.getElementById("c").addEventListener("click", function(){
     clearInterval(updateTimer);
     disableAnswerButtons();
     userAnswer = document.getElementById("c").textContent;
-    if (userAnswer == correctAnswer) {
-      console.log("Correct!");
-      let money = document.getElementById(currentLevel).textContent ;
-      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!"
-      toggleModal("correctModal");
-    } else {
-      console.log("You were wrong!");
-      toggleModal("wrongModal");
-      if(minimalWin) {
-        console.log(minimalWin);
-        document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
-      } else {
-        document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
-      }
-    }
+    evaluateAnswer();
   });
 
   document.getElementById("d").addEventListener("click", function(){
     clearInterval(updateTimer);
     disableAnswerButtons();
     userAnswer = document.getElementById("d").textContent;
-    if (userAnswer == correctAnswer) {
-      console.log("Correct!");
-      let money = document.getElementById(currentLevel).textContent ;
-      toggleModal("correctModal");
-      document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!";
-      if (currentLevel == 15) {
-        document.getElementById("nextLevel").disabled = true;
-        toggleModal("correctModal");
-      }
-    } else {
-      console.log("You were wrong!");
-      document.getElementById("game-box").disabled = true;
-      toggleModal("wrongModal");
-      if(minimalWin) {
-        console.log(minimalWin);
-        document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
-      } else {
-        document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
-      }
-    }
+    evaluateAnswer();
   });
 
   document.getElementById("money").addEventListener("click", function() {
     moneyWon = document.getElementById(currentLevel).textContent ;
     toggleModal("correctModal");
     toggleHidden("welcome-box", "game-box");
-    if (currentLevel == 15) {
-      document.getElementById("game-host-result").textContent = "DU VANN STORVINSTEN på en miljon svenska riksdaler!"
-    }
+    /* if (currentLevel == 15) {
+      document.getElementById("printscore").textContent = "DU VANN STORVINSTEN på en miljon svenska riksdaler!"
+    } */
   });
 
   document.getElementById("nextLevel").addEventListener("click", function(){

@@ -249,7 +249,7 @@ li.stage.current {
         position: absolute;
         background: white;
         width: 50%;
-        top: 20%;
+        top: 10%;
         left: 25%;
         border: 8px solid green;
         text-align: center;
@@ -258,7 +258,8 @@ li.stage.current {
 
     .answerCorrectModal img {
         position: relative;
-        margin: 10% auto;
+        border-radius: 50%;
+        margin: 0 auto;
     }
 
     .answerCorrectModal h2 {
@@ -305,7 +306,7 @@ li.stage.current {
         position: absolute;
         background: white;
         width: 50%;
-        top: 20%;
+        top: 10%;
         left: 25%;
         border: 8px solid red;
         text-align: center;
@@ -314,7 +315,8 @@ li.stage.current {
 
     .answerIncorrectModal img {
         position: relative;
-        margin: 10% auto;
+        border-radius: 50%;
+        margin: 0 auto;
     }
 
     .answerIncorrectModal h2 {
