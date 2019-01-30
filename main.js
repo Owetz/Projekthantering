@@ -630,11 +630,14 @@ function evaluateAnswer() {
       document.getElementById("game-host-correct").src = "./img/gif/game_host_30.gif";
       document.getElementById("nextLevel").disabled = true;
     } else {
+      document.getElementById("game-host-correct").src = "";
       document.getElementById("game-host-correct").src = "./img/gif/game_host_15.gif";
     };
   } else {
     console.log("You were wrong!");
     document.getElementById("game-box").disabled = true;
+    document.getElementById("game-host-incorrect").src = "";
+    document.getElementById("game-host-incorrect").src = "./img/gif/game_host_28.gif";
     toggleModal("wrongModal");
     if(minimalWin) {
       console.log(minimalWin);
