@@ -653,11 +653,11 @@ function startGame() {
       resetTimer();
       console.log("Redo!");
       toggleHidden("welcome-box", "game-box"); //Hide welcomescreen, show game.
-      createQuestion(currentLevel); //print the question and question to the game.
-      console.log("Rätt Svar: " + correctAnswer);
       nextlevel(currentLevel); //Removing .current from the sidebars li.
       currentLevel = 1; //Setting the currentLevel to 1.
       lifeLine = 1; //Setting lifeline to 1.
+      createQuestion(currentLevel); //print the question and question to the game.
+      console.log("Rätt Svar: " + correctAnswer);
       nextlevel(currentLevel); //Adding the .current to the li representing the current level.
       return userName;
     };
