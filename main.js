@@ -624,7 +624,7 @@ function evaluateAnswer() {
     console.log("Correct!");
     let money = document.getElementById(currentLevel).textContent ;
     toggleModal("correctModal");
-    document.getElementById("printscore").textContent  = "Grattis! Du har vunnit " + money + "kr!";
+    document.getElementById("printscore").textContent  = "Grattis! Du är nu uppe i " + money + "kr!";
     if (currentLevel == 15) {
       console.log("Level: 15");
       document.getElementById("game-host-correct").src = "./img/gif/game_host_30.gif";
@@ -641,9 +641,9 @@ function evaluateAnswer() {
     toggleModal("wrongModal");
     if(minimalWin) {
       console.log(minimalWin);
-      document.getElementById("printminscore").textContent  = "I ditt tidigare spel vann du " + minimalWin + "Kr! Vill du spela igen?";
+      document.getElementById("printminscore").textContent  = `Så fel det kan bli hörru, rätt svar var ju så klart "${correctAnswer}"!`;
     } else {
-      document.getElementById("printminscore").textContent  = "Det där gick inte så bra, försök igen!";
+      document.getElementById("printminscore").textContent  = `Hade du svarat "${correctAnswer}" istället så hade du fått fortsätta tävla, men nu gjorde du ju inte det.`;
     };
   }
 }
