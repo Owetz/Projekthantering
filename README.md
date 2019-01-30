@@ -52,7 +52,8 @@ FUTURE IMPROVEMENTS
 
  1. 
 
- Startbild: game_host_36.gif
- Förlustbild: game_host_36.gif
-
+ Startbild: game_host_25.gif
+ Förlustbilder: game_host_36.gif, game_host_17.gif, game_host_21.gif
+ Rätt-svarsbilder: game_host_15.gif, game_host_19.gif
  Högstaprisetvinst: game_host_30.gif
+ fråge-bild: game_host_5.gif

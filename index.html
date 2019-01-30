@@ -12,6 +12,7 @@
         <main>
             <!-- section.welcome -->
             <section class="welcome" id="welcome-box">
+                <img src="img/gif/game_host_25.gif" height="120px" width="120px;">
                 <h1>Vem vill bli miljonär?</h1>
                 <input type="text" id="userName" placeholder="Ditt namn tack..">
                 <input type="button" id="startgame" value="Spela" onclick="startGame()">
@@ -59,7 +60,7 @@
 
             <!-- .answerCorrectModal -->
             <section class="answerCorrectModal hidden" id="correctModal">
-                <img src="./img/correct.png" alt="Grön bock som symboliserar att man haft rätt.">
+                <img src="./img/gif/game_host_15.gif" id="game-host-correct" alt="Grön bock som symboliserar att man haft rätt.">
                 <h2 id="printscore">1000 poäng</h2>
                 <button class="endGame box-shadow" id="money"></button>
                 <button class="continue box-shadow" id="nextLevel"></button>
@@ -68,7 +69,7 @@
 
             <!-- .answerIncorrectModal -->
             <section class="answerIncorrectModal hidden" id="wrongModal">
-                <img src="./img/errormark.png" alt="Grön bock som symboliserar att man haft rätt.">
+                <img src="./img/gif/game_host_36.gif" id="game-host-incorrect">
                 <h2 id="printminscore">0 poäng</h2>
                 <button class="home box-shadow" id="home"></button>
                 <button class="restart box-shadow" onclick="resetGame()"></button>

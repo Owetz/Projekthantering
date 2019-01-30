@@ -817,9 +817,8 @@ function startGame() {
     moneyWon = document.getElementById(currentLevel).textContent ;
     toggleModal("correctModal");
     toggleHidden("welcome-box", "game-box");
-    document.getElementById("greeting").textContent  = "Grattis! Du vann " + moneyWon + " kronor i omgången! Vill du spela igen?";
     if (currentLevel == 15) {
-      document.getElementById("greeting").textContent = "DU VANN STORVINSTEN på en miljon svenska riksdaler!"
+      document.getElementById("game-host-result").textContent = "DU VANN STORVINSTEN på en miljon svenska riksdaler!"
     }
   });
 
