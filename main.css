@@ -70,6 +70,10 @@ input:focus {
     outline: none;
 }
 
+input[type="text"]:focus::placeholder{
+    color:white;
+}
+
 input[type="text"] {
     width: 200px;
     height: 40px;
@@ -81,6 +85,11 @@ input[type="text"] {
     text-align: center;
     font-weight: bold;
     font-size: 20px;
+}
+
+input[type="text"]:focus {
+    background-color:#7ACAE6;
+    color: white;
 }
 
 input[type="button"] {
@@ -98,6 +107,7 @@ input[type="button"] {
 
 input[type="button"]:hover {
     cursor: pointer;
+    background-color: hsla(0, 0%, 5%, 0.445);
 }
 
 /* /section.welcome */
